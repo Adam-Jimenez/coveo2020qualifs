@@ -49,7 +49,7 @@ const schema = {
             "phone": "(514) 796-7337",
             "school": "École de Technologie Supérieure",
             "schoolProgram": "Génie Logiciel",
-            "graduationDate": 1587268800,
+            "graduationDate": 1587268800000,
             "shirtSize": "m-M"
         }
     ]
