@@ -55,7 +55,7 @@ const schema = {
     ]
 }
 
-const letters = []
+let prob = null
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -69,6 +69,7 @@ app.post('/', (req, res) => {
     }
     const solutions = []
     const problems = req.body
+    const prob = problems
     problems.forEach(problem => {
         solutions.push(solver(problem).join(""))
     })
@@ -77,7 +78,7 @@ app.post('/', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.json(letters)
+    res.json(prob)
 })
 
 const PORT = process.env.PORT || 3000;
