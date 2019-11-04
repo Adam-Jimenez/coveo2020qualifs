@@ -4,8 +4,8 @@ const app = express()
 
 const schema = {
     "teamName": "teamName",
-    "teamStreetAddress": "11 rue du Calvados"
-    "solutions": null
+    "teamStreetAddress": "11 rue du Calvados",
+    "solutions": null,
     "participants": []
 }
 
