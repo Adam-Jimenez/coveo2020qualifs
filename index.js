@@ -69,7 +69,7 @@ app.post('/', (req, res) => {
     }
     const solutions = []
     const problems = req.body
-    const prob = problems
+    prob = problems
     problems.forEach(problem => {
         solutions.push(solver(problem).join(""))
     })
