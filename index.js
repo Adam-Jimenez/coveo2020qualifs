@@ -1,5 +1,6 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+const solver = require("./solver")
 const app = express()
 
 const schema = {
@@ -18,8 +19,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.post('/', (req, res) => {
-    letters.push(req.body)
-    res.json({ success: true })
+    const val = {
+        ...schema
+    }
+    const solutions = []
+    const problems = req.body
+    problems.forEach(problem => {
+        solutions.push(solver(problem).join(""))
+    })
+    val.solutions = solutions
+    res.json(val)
 })
 
 app.get('/', (req, res) => {
