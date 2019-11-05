@@ -49,6 +49,7 @@ function letterPositionsInMatrix(letter, matrix) {
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[0].length; j++) {
             if (letterAtPosition(letter, matrix, i, j)) {
+                console.log(letter)
                 eraseLetter(letter, matrix, i, j)
                 positions.push([i, j])
             }

@@ -46,16 +46,15 @@ function rotate(matrix) {
 
 function computeRotations(letter) {
     last = letters[letter]
-    for (let i = 0; i<3; i++) {
-        last = rotate(last)
+    for (let i = 0; i<4; i++) {
         rotatedLetters[letter+i] = last
+        last = rotate(last)
     }
 }
 
-computeRotations("C")
-computeRotations("O")
-computeRotations("V")
-computeRotations("E")
+for (const key in letters) {
+    computeRotations(key)
+}
 
 module.exports = rotatedLetters
 
