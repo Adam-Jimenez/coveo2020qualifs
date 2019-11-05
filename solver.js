@@ -59,13 +59,16 @@ function letterPositionsInMatrix(letter, matrix) {
 
 module.exports = function solve(matrix) {
     let letterPositions = []
-    for (key in rotatedLetters) {
+    const keys = Object.keys(rotatedLetters)
+    keys.sort()
+    keys.reverse()
+    keys.forEach(key => {
         const letter = rotatedLetters[key]
         const positions = letterPositionsInMatrix(letter, matrix)
         positions.forEach(position => {
             letterPositions.push([key[0], position])
         })
-    }
+    })
     letterPositions = letterPositions.filter(a => a[1].length > 0)
     letterPositions.sort(function(a, b) {
         return a[1][1] - b[1][1]
