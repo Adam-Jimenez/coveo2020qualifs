@@ -2,7 +2,7 @@ const solver = require("./solver.js")
 const cases = require('./requests/req.json')
 
 
-const testCase = cases[2]
+const testCase = cases[3]
 console.log(testCase)
 testCase.forEach(x => {
     x.forEach(y => {
