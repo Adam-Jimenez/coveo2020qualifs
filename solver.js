@@ -71,7 +71,7 @@ module.exports = function solve(matrix) {
     })
     letterPositions = letterPositions.filter(a => a[1].length > 0)
     letterPositions.sort(function(a, b) {
-        return a[1][1] - b[1][1] || a[1][0] - b[1][0]
+        return a[1][0] - b[1][0] || a[1][1] - b[1][1]
     })
     letterPositions = letterPositions.map(x => x[0])
     return letterPositions
