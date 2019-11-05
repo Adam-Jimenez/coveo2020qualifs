@@ -1,4 +1,5 @@
 const express = require("express")
+const _ = require('lodash')
 const bodyParser = require("body-parser")
 const solver = require("./solver")
 const app = express()
@@ -69,7 +70,7 @@ app.post('/', (req, res) => {
     }
     const solutions = []
     const problems = req.body
-    prob = problems
+    prob = _.cloneDeep(problems)
     problems.forEach(problem => {
         solutions.push(solver(problem).join(""))
     })

@@ -2,7 +2,7 @@ const solver = require("./solver.js")
 const cases = require('./requests/req.json')
 
 
-const testCase = cases[1]
+const testCase = cases[3]
 console.log(testCase)
 console.log(solver(testCase))
 // for (const idx in cases) {
