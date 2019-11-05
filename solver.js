@@ -49,7 +49,6 @@ function letterPositionsInMatrix(letter, matrix) {
     for (let i = 0; i < matrix.length; i++) {
         for (let j = 0; j < matrix[0].length; j++) {
             if (letterAtPosition(letter, matrix, i, j)) {
-                console.log(letter)
                 eraseLetter(letter, matrix, i, j)
                 positions.push([i, j])
             }
@@ -63,11 +62,13 @@ module.exports = function solve(matrix) {
     for (key in rotatedLetters) {
         const letter = rotatedLetters[key]
         const positions = letterPositionsInMatrix(letter, matrix)
-        letterPositions.push([key[0], positions])
+        positions.forEach(position => {
+            letterPositions.push([key[0], position])
+        })
     }
     letterPositions = letterPositions.filter(a => a[1].length > 0)
     letterPositions.sort(function(a, b) {
-        return a[1][0] - b[1][0]
+        return a[1][1] - b[1][1]
     })
     letterPositions = letterPositions.map(x => x[0])
     return letterPositions
